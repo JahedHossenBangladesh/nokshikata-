@@ -1,19 +1,33 @@
-import React from 'react'
+import { AppBar, Container, Toolbar, Typography } from '@material-ui/core'
 import Head from 'next/dist/shared/lib/head'
-import { AppBar } from '@material-ui/core'
-function Layout() {
+import React from 'react'
+import useStyle from '../utils/style.js'
+function Layout({children}) {
+    const classes = useStyle()
     return (
-        <div>
-            <Head>
-                <title>Next Amazon</title>
-            </Head>
-            <AppBar>
+      <div>
+        <Head>
+          <title>Next Amazon</title>
+        </Head>
+        <AppBar position="static" className={classes.navbar}>
+          <Toolbar>
+            <Typography>
+              {" "}
+              <h1>
+                <span style={{ color: "white" }}>গাও </span>
 
-
-                </AppBar>
-
-        </div>
-    )
+                <span style={{ color: "yellow" }}>গেরাম </span>
+              
+              </h1>{" "}
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Container className={classes.main}>{children}</Container>
+        <footer className={classes.footer}>
+          <Typography>All right goes to amazona</Typography>
+        </footer>
+      </div>
+    );
 }
 
 export default Layout
