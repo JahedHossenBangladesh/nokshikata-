@@ -1,5 +1,7 @@
-import { AppBar, Container, Toolbar, Typography } from '@material-ui/core'
+import { AppBar, Container, Link, Toolbar, Typography } from '@material-ui/core'
 import Head from 'next/dist/shared/lib/head'
+import NextLink from 'next/link'
+
 import React from 'react'
 import useStyle from '../utils/style.js'
 function Layout({children}) {
@@ -16,14 +18,27 @@ function Layout({children}) {
           // position="fixed"
         >
           <Toolbar>
-            <Typography>
-              {" "}
-              <h1>
-                <span style={{ color: "white" }}>গাঁও </span>
+            <NextLink href="/" passHref>
+              <Link>
+                <Typography className={classes.brand}>
+                  {" "}
+                  <h1>
+                    <span style={{ color: "white" }}>গাঁও </span>
 
-                <span style={{ color: "yellow" }}>গেরাম </span>
-              </h1>{" "}
-            </Typography>
+                    <span style={{ color: "yellow" }}>গেরাম </span>
+                  </h1>{" "}
+                </Typography>
+              </Link>
+            </NextLink>
+            <div className={classes.grow}></div>
+            <div>
+              <NextLink href="/cart" passHref>
+                <Link>Cart</Link>
+              </NextLink>
+              <NextLink href="/cart" passHref>
+                <Link>Login</Link>
+              </NextLink>
+            </div>
           </Toolbar>
         </AppBar>
         <Container className={classes.main}>{children}</Container>
