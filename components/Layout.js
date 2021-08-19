@@ -19,7 +19,7 @@ function Layout({children}) {
             <Typography>
               {" "}
               <h1>
-                <span style={{ color: "white" }}>গাও </span>
+                <span style={{ color: "white" }}>গাঁও  </span>
 
                 <span style={{ color: "yellow" }}>গেরাম </span>
               </h1>{" "}
@@ -29,7 +29,7 @@ function Layout({children}) {
         <Container className={classes.main}>{children}</Container>
         <footer
           className={classes.footer}
-          style={{ backgroundColor: "black", height: "70px",color: "white" }}
+          style={{ backgroundColor: "black", height: "70px", color: "white" }}
         >
           <Typography>All right goes to Gao Geram </Typography>
         </footer>
