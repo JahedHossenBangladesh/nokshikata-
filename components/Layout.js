@@ -9,7 +9,12 @@ function Layout({children}) {
         <Head>
           <title>Next Amazon</title>
         </Head>
-        <AppBar position="static" className={classes.navbar}>
+        <AppBar
+          position="static"
+          className={classes.navbar}
+          // style = {{ marginBottom:'20px'}}
+          // position="fixed"
+        >
           <Toolbar>
             <Typography>
               {" "}
@@ -17,14 +22,16 @@ function Layout({children}) {
                 <span style={{ color: "white" }}>গাও </span>
 
                 <span style={{ color: "yellow" }}>গেরাম </span>
-              
               </h1>{" "}
             </Typography>
           </Toolbar>
         </AppBar>
         <Container className={classes.main}>{children}</Container>
-        <footer className={classes.footer}>
-          <Typography>All right goes to amazona</Typography>
+        <footer
+          className={classes.footer}
+          style={{ backgroundColor: "black", height: "70px",color: "white" }}
+        >
+          <Typography>All right goes to Gao Geram </Typography>
         </footer>
       </div>
     );
