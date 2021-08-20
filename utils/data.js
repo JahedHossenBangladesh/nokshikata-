@@ -11,7 +11,7 @@ const data = {
       rating: "4.5",
       numReviews: 12,
       countInStock: 20,
-      description: "Ash is a cool brand. This is a cool product. It is cool.",
+      description: "A Good Quality.",
     },
     {
       name: "karina Dress",
@@ -24,7 +24,7 @@ const data = {
       rating: "4.5",
       numReviews: 12,
       countInStock: 20,
-      description: "Ash is a cool brand. This is a cool product. It is cool.",
+      description: "A Good Quality.",
     },
     {
       name: "Sabana Dress",
@@ -37,7 +37,7 @@ const data = {
       rating: "4.5",
       numReviews: 12,
       countInStock: 20,
-      description: "Ash is a cool brand. This is a cool product. It is cool.",
+      description: "A Good Quality.",
     },
     {
       name: "Munni Dress",
@@ -50,7 +50,7 @@ const data = {
       rating: "4.5",
       numReviews: 12,
       countInStock: 20,
-      description: "Ash is a cool brand. This is a cool product. It is cool.",
+      description: "A Good Quality.",
     },
     {
       name: "Sabnur Dress",
@@ -63,7 +63,7 @@ const data = {
       rating: "4.5",
       numReviews: 12,
       countInStock: 20,
-      description: "Ash is a cool brand. This is a cool product. It is cool.",
+      description: "A Good Quality.",
     },
     {
       name: "Hero Alom Dress",
@@ -76,7 +76,7 @@ const data = {
       rating: "4.5",
       numReviews: 12,
       countInStock: 20,
-      description: "Ash is a cool brand. This is a cool product. It is cool.",
+      description: "A Good Quality.",
     },
     {
       name: "Pori Moni Dress",
@@ -89,7 +89,7 @@ const data = {
       rating: "4.5",
       numReviews: 12,
       countInStock: 20,
-      description: "Ash is a cool brand. This is a cool product. It is cool.",
+      description: "A Good Quality.",
     },
   ],
 };
