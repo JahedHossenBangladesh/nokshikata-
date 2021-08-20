@@ -3,13 +3,13 @@ import Head from 'next/dist/shared/lib/head'
 import NextLink from 'next/link'
 
 import React from 'react'
-import useStyle from '../utils/style.js'
-function Layout({children}) {
-    const classes = useStyle()
+import useStyles from '../utils/style.js'
+function Layout({title,children}) {
+    const classes = useStyles()
     return (
       <div>
         <Head>
-          <title>Next Amazon</title>
+          <title>{title ? `${title} -গাঁও গেরাম ` : "গাঁও গেরাম"}</title>
         </Head>
         <AppBar
           position="static"

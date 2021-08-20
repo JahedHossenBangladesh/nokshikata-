@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 
-const useStyle = makeStyles({
+const useStyles = makeStyles({
   navbar: {
     // background-color  red
     backgroundColor: "black",
@@ -22,5 +22,9 @@ const useStyle = makeStyles({
   footer: {
     textAlign: "center",
   },
+  section:{
+    marginTop: "10px",
+    marginBottom: "10px",
+  }
 });
-export default useStyle;
+export default useStyles;
