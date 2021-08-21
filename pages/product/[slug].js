@@ -23,7 +23,7 @@ if(!product) {
 
 
     return (
-      <Layout title={product.name}>
+      <Layout title={product.name} description={product.description}>
         <div className={classes.section}>
           <NextLink href="/" passHref>
             <Link>
@@ -45,7 +45,7 @@ if(!product) {
             <List>
               <ListItem>
                 {" "}
-                <Typography>{product.name}</Typography>{" "}
+                <Typography component='h1'>{product.name}</Typography>{" "}
               </ListItem>
 
               <ListItem>

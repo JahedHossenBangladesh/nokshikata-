@@ -4,12 +4,13 @@ import NextLink from 'next/link'
 
 import React from 'react'
 import useStyles from '../utils/style.js'
-function Layout({title,children}) {
+function Layout({title,children,description}) {
     const classes = useStyles()
     return (
       <div>
         <Head>
           <title>{title ? `${title} -গাঁও গেরাম ` : "গাঁও গেরাম"}</title>
+          {description && <meta name="description" content={description} />}
         </Head>
         <AppBar
           position="static"
