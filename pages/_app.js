@@ -1,5 +1,6 @@
 import 'tailwindcss/tailwind.css'
 import React, { useEffect } from "react";
+import { StoreProvider } from '../utils/Store';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() =>{
@@ -8,7 +9,11 @@ function MyApp({ Component, pageProps }) {
       jssStyles.parentNode.removeChild(jssStyles)
     }
   }, [])
-  return <Component {...pageProps} />
+  return (
+    <StoreProvider>
+      <Component {...pageProps} />
+    </StoreProvider>
+  ); 
 }
 
 export default MyApp
