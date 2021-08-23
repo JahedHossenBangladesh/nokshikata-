@@ -36,20 +36,20 @@ export default function Home() {
             <Grid item md={4} key={product.id}>
               <Card>
                 <NextLink href={`/product/${product.slug}`} passHref>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    image={product.image}
-                    title={product.name}
-                    style={{ height: 200 }}
-                  ></CardMedia>
-                  <CardContent>
-                    <Typography>{product.name}</Typography>
-                  </CardContent>
-                </CardActionArea>
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      image={product.image}
+                      title={product.name}
+                      style={{ height: 200 }}
+                    ></CardMedia>
+                    <CardContent>
+                      <Typography>{product.name}</Typography>
+                    </CardContent>
+                  </CardActionArea>
                 </NextLink>
                 <CardActions>
-                  <Typography>{product.price}</Typography>
+                  <Typography>৳{product.price}</Typography>
                   <Button size="small" color="primary">
                     Add to cart
                   </Button>
