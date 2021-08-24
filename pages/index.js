@@ -2,21 +2,16 @@ import {
   Button,
   Card,
   CardActionArea,
-  CardActions,
-  CardMedia,
-  Grid,
-  Typography,
-  CardContent,
-  createTheme,
-  responsiveFontSizes,
-  ThemeProvider,
+  CardActions, CardContent, CardMedia, createTheme, Grid, responsiveFontSizes,
+  ThemeProvider, Typography
 } from "@material-ui/core";
-
-import Layout from '../components/Layout'
-
-import data from '../utils/data'
-
 import NextLink from "next/link";
+import Layout from '../components/Layout';
+import Product from "../model/product";
+import db from "../utils/db";
+
+
+
 
 
 let theme = createTheme();
@@ -24,7 +19,8 @@ theme = responsiveFontSizes(theme);
 
 
 
-export default function Home() {
+export default function Home(props) {
+  const { products } = props;
   return (
     <div>
       <Layout>
@@ -32,7 +28,7 @@ export default function Home() {
           <Typography variant="h3">Products</Typography>
         </ThemeProvider>
         <Grid container spacing={3}>
-          {data.products.map((product) => (
+          {products.map((product) => (
             <Grid item md={4} key={product.id}>
               <Card>
                 <NextLink href={`/product/${product.slug}`} passHref>
@@ -61,4 +57,15 @@ export default function Home() {
       </Layout>
     </div>
   );
+}
+
+export async function getServerSideProps(){
+  await db.connect();
+  const products = await Product.find({}).lean();
+  await db.disconnect();
+  return {
+    props: {
+      products: products.map(db.convertDataToObj),
+    },
+  };
 }

@@ -14,13 +14,16 @@ import {
   Button,
 } from "@material-ui/core";
 import useStyles from "../../utils/style";
+import Product from "../../model/product";
+import db from '../../utils/db'
+export default function ProductScreen(props) {
+  const { product} = props;
 
-export default function ProductScreen() {
   const classes = useStyles();
-  const router = useRouter();
+  // const router = useRouter();
 
-  const { slug } = router.query;
-  const product = data.products.find((p) => p.slug === slug);
+  // const { slug } = router.query;
+  // const product = data.products.find((p) => p.slug === slug);
 
   if (!product) {
     return <div> notfound </div>;
@@ -107,4 +110,17 @@ export default function ProductScreen() {
       </Grid>
     </Layout>
   );
+}
+
+export async function getServerSideProps(context) {
+  const {params} = context;
+  const {slug} = params;
+  await db.connect();
+  const product = await Product.findOne({slug}).lean();
+  await db.disconnect();
+  return {
+    props: {
+      product: db.convertDataToObj(product),
+    },
+  };
 }
