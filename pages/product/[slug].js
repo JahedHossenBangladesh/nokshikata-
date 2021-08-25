@@ -28,7 +28,9 @@ export default function ProductScreen(props) {
   if (!product) {
     return <div> notfound </div>;
   }
-
+ const addToCartHandler = async() => {
+   const data = await axios.get(`/api/products/${product._id}`);
+ }
   return (
     <Layout title={product.name} description={product.description}>
       <div className={classes.section}>
@@ -100,7 +102,9 @@ export default function ProductScreen(props) {
                 </Grid>
               </ListItem>
               <ListItem>
-                <Button fullWidth variant="contained" color="primary">
+                <Button fullWidth variant="contained" color="primary"
+                onClick = {addToCartHandler}
+                >
                   Add to Cart
                 </Button>
               </ListItem>
